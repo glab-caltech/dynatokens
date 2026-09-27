@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="DynaTokens: Teaching Dynamics to Camera-Controlled Video Models at Test Time">
+  <meta name="keywords" content="DynaTokens, world models, camera-controlled video generation, test-time training, dynamic tokens">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DynaTokens</title>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+
+  <!-- Scripts -->
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/results.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/quantitative.js"></script>
+
+  <style>
+    /* Inline styles carried over from the steer3d template. */
+    .footer {
+      background-color: #ffffff;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .flex-container {
+      flex-direction: row;
+    }
+    .middle-text {
+      font-size: 15px;
+      text-align: center;
+      color: #333;
+      min-width: 120px;
+      align-self: center;
+    }
+    /* Result gallery: 5 columns on tablet & desktop, 3 on mobile. */
+    .thumbnail-grid .column {
+      flex-basis: 20%;
+      max-width: 20%;
+    }
+    @media screen and (max-width: 768px) {
+      .thumbnail-grid .column {
+        flex-basis: 33.333%;
+        max-width: 33.333%;
+      }
+      .flex-container {
+        flex-direction: column !important;
+        align-items: center !important;
+      }
+      .middle-text {
+        width: 100% !important;
+        margin: 12px 0 !important;
+        text-align: center !important;
+        font-size: 16px;
+      }
+    }
+    /* Results gallery (trajectory rows x method columns). */
+    #instance-pills { margin-bottom: 1rem; }
+    #instance-pills .button { font-family: 'Google Sans', sans-serif; }
+    .result-hero { margin-bottom: 0.5rem; }
+    .result-hero img { width: 100%; border-radius: 10px; border: 1px solid #bbb; }
+    .result-gridwrap { overflow-x: auto; }
+    .result-grid { display: grid; gap: 6px; align-items: start; }  /* top-align so frames line up regardless of note length */
+    .result-grid .colhdr { font-size: 15px; color: #555; padding: 4px 0; border-bottom: 1px solid #ddd; }
+    .result-grid .colhdr b { color: #333; }
+    .result-grid { max-width: 912px; margin: 0 auto; }  /* same width as the teaser video */
+    .result-grid .rowhdr { font-weight: bold; font-size: 20px; padding-bottom: 6px; }
+    .result-grid .rowhdr.ours { color: hsl(204, 86%, 53%); }
+    .result-grid .note { font-size: 15px; color: black; padding-top: 6px; min-height: 2.8em; }
+    .result-grid .note .mark { font-weight: bold; }
+    .result-grid .note .mark.ok { color: hsl(141, 70%, 22%); }
+    .result-grid .note .mark.bad { color: #c0392b; }
+    .traj-picker { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 0.5rem 0 1rem; font-size: 16px; }
+    @media (max-width: 768px) { .result-grid { grid-template-columns: 1fr !important; width: 100%; } }
+    /* "Hover to play" badge on gallery clips */
+    .clip { position: relative; }
+    .hover-hint {
+      position: absolute; left: 8px; top: 8px;
+      display: flex; align-items: center; gap: 6px; padding: 6px 12px 6px 8px;
+      background: rgba(255, 255, 255, 0.65); color: #222; font-size: 12px; font-weight: bold;
+      border-radius: 999px; pointer-events: none; white-space: nowrap; transition: opacity 0.2s;
+    }
+    .clip.playing .hover-hint { opacity: 0; }
+    .hover-hint-icon { display: inline-block; }
+    .result-grid video {
+      display: block; width: 100%; border-radius: 8px; border: 1px solid #bbb;
+      background: #000; cursor: pointer;
+    }
+    .result-grid .missing {
+      aspect-ratio: 832 / 480; border-radius: 8px; background: #f5f5f5;
+      color: #aaa; font-size: 12px; display: flex; align-items: center; justify-content: center;
+    }
+    /* Quantitative results: method x metric bar grid */
+    .quant-wrap { overflow-x: auto; max-width: 912px; margin: 0 auto; }
+    .quant-grid { display: grid; column-gap: 16px; row-gap: 6px; align-items: center; min-width: 640px; font-size: 15px; color: #0b0b0b; }
+    .quant-grid .q-group { text-align: center; font-weight: bold; font-size: 18px; color: #52514e; border-bottom: 1px solid #e1e0d9; padding-bottom: 2px; }
+    .quant-grid .q-metric { font-size: 15px; color: #52514e; padding-bottom: 4px; }
+    .quant-grid .q-method { text-align: right; padding-right: 4px; white-space: nowrap; }
+    .quant-grid .q-method.ours { font-weight: bold; }
+    .quant-grid .q-cell { position: relative; display: flex; align-items: center; height: 26px; border-left: 1px solid #c3c2b7; cursor: default; }
+    .quant-grid .q-bar { flex-shrink: 0; height: 18px; background: #c3c2b7; border-radius: 0 4px 4px 0; }
+    .quant-grid .q-bar.ours { background: #2a78d6; }
+    .quant-grid .q-val { margin-left: 5px; font-size: 14px; color: #52514e; font-variant-numeric: tabular-nums; }
+    .quant-grid .q-cell:hover .q-bar { filter: brightness(0.9); }
+    #quant-tip { position: fixed; pointer-events: none; opacity: 0; transition: opacity 0.1s; background: #fff; color: #0b0b0b;
+      border: 1px solid rgba(11,11,11,0.10); border-radius: 6px; padding: 4px 8px; font-size: 13px; box-shadow: 0 2px 8px rgba(0,0,0,0.12); z-index: 10; }
+  </style>
+
+</head>
+
+<body>
+
+
+  <!-- ======================= Header ======================= -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">DynaTokens: Teaching Dynamics to Camera-Controlled Video Models at Test Time</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://ziqi-ma.github.io/" target="_blank" rel="noopener noreferrer">Ziqi Ma</a>,</span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/hongqiao-chen" target="_blank" rel="noopener noreferrer">Hongqiao Chen</a>,</span>
+              <span class="author-block">
+                <a href="https://gkioxari.github.io/" target="_blank" rel="noopener noreferrer">Georgia Gkioxari</a></span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">California Institute of Technology</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>pdf</span>
+                  </a>
+                </span>
+                <!-- arXiv Link. -->
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Results anchor. -->
+                <span class="link-block">
+                  <a href="#results" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fa fa-video"></i>
+                    </span>
+                    <span>Results</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/ziqi-ma/DynaTokens/" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======================= Teaser ======================= -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <p style="font-size: 18px; color: black;">
+          Current camera-controlled video models struggle with dynamics. We propose <b>DynaTokens</b>, a test-time approach
+          that trains a few learnable, scene-specific tokens to enable scene dynamics while preserving camera control.
+          <b>DynaTokens</b> is a lightweight add-on to a base video model and effectively decouples object motion from
+          camera motion, outperforming other parameter-efficient fine-tuning algorithms like <a href="https://arxiv.org/abs/2106.09685" target="_blank" rel="noopener noreferrer">LoRA</a>, block finetuning, and <a href="https://arxiv.org/abs/2504.05298" target="_blank" rel="noopener noreferrer">TTT</a>.
+        </p>
+        <div style="height: 30px;"></div>
+        <video id="teaser" autoplay muted loop playsinline controls width="100%" style="border-radius: 10px;">
+          <source src="static/videos/teaser.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======================= Results ======================= -->
+  <section class="section" id="results">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Qualitative results</h2>
+          <div class="content has-text-justified">
+            <p style="font-size: 18px; color: black;">
+              <b>DynaTokens</b> enable dynamics for camera-controlled video generation, which existing models like <a href="https://arxiv.org/abs/2512.14614" target="_blank" rel="noopener noreferrer">HYWP</a>, <a href="https://arxiv.org/abs/2604.13036" target="_blank" rel="noopener noreferrer">Lyra-2</a>
+              and <a href="https://arxiv.org/abs/2601.20540" target="_blank" rel="noopener noreferrer">Lingbot</a> struggle with. <a href="https://arxiv.org/abs/2603.07145" target="_blank" rel="noopener noreferrer">LiveWorld</a> and <a href="https://arxiv.org/abs/2603.25716" target="_blank" rel="noopener noreferrer">HyDRA</a>, which specifically train for dynamics using synthetic
+              data, also struggle with dynamics in realistic scenes.
+            </p>
+            <p style="font-size: 18px; color: black;">
+              The initial frame and prompt are shown at the top. The dropdown selects a camera trajectory unseen
+              during test-time training. The keycaps in the videos show the camera control active at that frame:
+              WASD (bottom-left) for translation and arrows (bottom-right) for rotation.
+            </p>
+          </div>
+
+          <!-- Benchmark tabs (one per collection). -->
+          <div class="tabs is-centered is-toggle is-toggle-rounded" id="tabs"><ul></ul></div>
+
+          <!-- Instance pills for the active collection. -->
+          <div class="buttons is-centered are-small" id="instance-pills"></div>
+
+          <!-- Initial frame + prompt for the active instance. -->
+          <div class="columns is-vcentered result-hero" id="result-hero" style="max-width: 960px; margin-left: auto; margin-right: auto;">
+            <div class="column is-one-third"><img id="hero-init" alt="initial frame"></div>
+            <div class="column has-text-left"><p id="hero-prompt" style="font-size: 16px; color: black;"></p></div>
+          </div>
+
+          <!-- Camera motion dropdown. -->
+          <div class="traj-picker">
+            <span>Camera motion:</span>
+            <div class="select is-rounded"><select id="traj-select"></select></div>
+          </div>
+
+          <!-- One clip per method for the selected camera motion. -->
+          <div class="result-gridwrap"><div class="result-grid" id="result-grid"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======================= How DynaTokens work ======================= -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">How do DynaTokens work?</h2>
+
+          <div class="content has-text-justified">
+            <p style="font-size: 18px; color: black;">
+              Teaching camera-controlled models dynamics is not simple, and naive methods like LoRA or TTT fail (see
+              <a href="#ablations">comparison</a> below). <b>DynaTokens</b> solves this challenge based on the following observation. Camera
+              control is global: it influences every patch across every frame. Scene dynamics are local: for example,
+              "a dog running" should affect only the dog region while preserving the rest of the scene.
+            </p>
+            <p style="font-size: 18px; color: black;">
+              <b>DynaTokens design.</b> Existing adaptation methods, such as LoRA, apply global parameter updates. However, since camera
+              information is injected directly into the generative flow (via PRoPE, Plücker rays or action
+              conditioning), camera control and dynamics generation are entangled, and supervision on dynamics
+              degrades camera control.
+              <b>DynaTokens</b> instead adds learnable tokens that the video patch tokens cross-attend to in every
+              transformer block. The attention weights act as a localized gate, so the tokens steer only the patches
+              where dynamics should occur while the frozen base model keeps its camera control behavior.
+            </p>
+            <div style="text-align: center;">
+              <img src="static/images/method_arch.png" alt="DynaTokens architecture" width="38%">
+            </div>
+            <p style="font-size: 18px; color: black; margin-top: 1.5rem;">
+              <b>Attention map visualization.</b> We visualize the attention weight of <b>DynaTokens</b> (token 3) over the video patches.
+              The video is shown on the left and the attention map on the right. White denotes the value of uniform
+              attention (1/N), red means higher and blue means lower. The time sync is expected to be coarse rather than
+              exact, because attention map operates on latent frames, which correspond to 4 physical frames.
+            </p>
+            <div style="text-align: center;">
+              <video autoplay muted loop playsinline width="60%" style="border-radius: 10px;">
+                <source src="static/videos/attention_map.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p style="font-size: 18px; color: black; margin-top: 1.5rem;">
+              <b>DynaTokens</b>' design enables cross attention to act like a localized gate. The attention map follows
+              the moving dog. This enables learning to localize to the patches containing the motion, without affecting
+              all patches globally, thus maintaining camera control. Check out the paper for more qualitative and quantitative
+              analysis on the attention map localization.
+            </p>
+            <p style="font-size: 18px; color: black; margin-top: 1.5rem;">
+              <b>Test-time training setting.</b> For each scene, we first curate a few trajectories with dynamics, leveraging VLM, and video generation
+              models. Using these trajectories, we train a few (16) additional tokens (i.e. <b>DynaTokens</b>) while keeping
+              the base model frozen. Using the learned tokens, the model can successfully generate dynamics on new,
+              unseen trajectories, as shown in the <a href="#results">results section</a> above.
+            </p>
+            <div style="text-align: center;">
+              <img src="static/images/method_ttt.png" alt="DynaTokens test-time training" width="48%">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======================= Ablations ======================= -->
+  <section class="section" id="ablations">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Comparison with LoRA, TTT, etc.</h2>
+
+          <div class="content has-text-justified">
+            <p style="font-size: 18px; color: black;">
+              We compare <b>DynaTokens</b> with parameter-efficient finetuning alternatives trained on exactly the
+              same curated trajectories: LoRA, block finetuning, and TTT layers. The initial frame and prompt are shown
+              at the top, and the dropdown selects a camera trajectory unseen during test-time training.
+            </p>
+          </div>
+
+          <div class="tabs is-centered is-toggle is-toggle-rounded" id="abl-tabs"><ul></ul></div>
+          <div class="buttons is-centered are-small" id="abl-instance-pills"></div>
+
+          <!-- Initial frame + prompt for the active instance. -->
+          <div class="columns is-vcentered result-hero" style="max-width: 960px; margin-left: auto; margin-right: auto;">
+            <div class="column is-one-third"><img id="abl-hero-init" alt="initial frame"></div>
+            <div class="column has-text-left"><p id="abl-hero-prompt" style="font-size: 16px; color: black;"></p></div>
+          </div>
+
+          <div class="traj-picker">
+            <span>Camera motion:</span>
+            <div class="select is-rounded"><select id="abl-traj-select"></select></div>
+          </div>
+
+          <!-- One clip per method for the selected camera motion (2x2, ours last). -->
+          <div class="result-gridwrap"><div class="result-grid" id="abl-grid" style="max-width: 620px;"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======================= Quantitative results ======================= -->
+  <section class="section" id="quantitative">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Quantitative results</h2>
+
+          <div class="content has-text-justified">
+            <p style="font-size: 18px; color: black;">
+              We evaluate on VBench2 and WorldScore. For VBench2, we use a subset of Dynamic Spatial Relations (DSR)
+              and Motion Order Understanding (MOU). For WorldScore, we measure motion accuracy (MA) with consideration of
+              camera movement.
+            </p>
+            <div class="quant-wrap"><div id="quant-baselines"></div></div>
+            <div class="quant-wrap" style="margin-top: 2.5rem;"><div id="quant-peft"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======================= BibTeX ======================= -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{ma2026dynatokens,
+ title = {DynaTokens: Teaching Dynamics to Camera-Controlled Video Models at Test Time},
+ author = {Ma, Ziqi and Chen, Hongqiao and Gkioxari, Georgia},
+ booktitle = {NeurIPS},
+ year = {2026}
+}</code></pre>
+    </div>
+  </section>
+
+
+  <div class="footer">
+    <p style="font-size: 12px; color: gray;">
+      This website builds upon the template of <a href="https://mcc3d.github.io/">MCC</a>.
+    </p>
+  </div>
+
+  <div id="quant-tip"></div>
+
+</body>
+
+</html>

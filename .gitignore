@@ -1,0 +1,14 @@
+.DS_Store
+*.log
+static/results/_overlays/
+teaser/work/
+__pycache__/
+README.md
+teaser/
+annotate.html
+serve.py
+serve.sh
+tools/
+ablation_grid.html
+index_grid_a.html
+index_grid_b.html

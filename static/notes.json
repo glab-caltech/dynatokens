@@ -1,0 +1,1394 @@
+{
+ "vbench_baselines/bird/down7left8": {
+  "hywp": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "lyra2": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "lingbot": {
+   "text": "Camera does not move down.",
+   "ok": false
+  },
+  "liveworld": {
+   "text": "Bird flies to the left instead of to the right of the apple as the prompt says.",
+   "ok": false
+  },
+  "hydra": {
+   "text": "Quality degrades and camera does not move down.",
+   "ok": false
+  },
+  "dynatoken": {
+   "text": "Bird correctly flies to the right of the apple and camera moves correctly.",
+   "ok": true
+  }
+ },
+ "vbench_baselines/bird/right7up8": {
+  "hywp": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "lyra2": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "lingbot": {
+   "text": "Bird flies out of frame.",
+   "ok": false
+  },
+  "liveworld": {
+   "text": "Camera follows the bird.",
+   "ok": false
+  },
+  "hydra": {
+   "text": "Significant quality degradation.",
+   "ok": false
+  },
+  "dynatoken": {
+   "text": "Bird correctly flies to the right of the apple and camera moves correctly.",
+   "ok": true
+  }
+ },
+ "vbench_baselines/bird/w7left8": {
+  "hywp": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "lyra2": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "lingbot": {
+   "text": "Bird flies out of frame.",
+   "ok": false
+  },
+  "liveworld": {
+   "text": "Bird correctly flies to the right of the apple and camera moves correctly.",
+   "ok": true
+  },
+  "hydra": {
+   "text": "Significant quality degradation.",
+   "ok": false
+  },
+  "dynatoken": {
+   "text": "Bird correctly flies to the right of the apple and camera moves correctly.",
+   "ok": true
+  }
+ },
+ "vbench_baselines/cat_playing_with_toy/w7left8": {
+  "hywp": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "lyra2": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "liveworld": {
+   "text": "Cat does not jump.",
+   "ok": false
+  },
+  "hydra": {
+   "text": "Cat deforms significantly.",
+   "ok": false
+  },
+  "lingbot": {
+   "text": "Cat does not jump.",
+   "ok": false
+  },
+  "dynatoken": {
+   "text": "Cat jumps correctly and camera moves correctly.",
+   "ok": true
+  }
+ },
+ "vbench_baselines/cat_playing_with_toy/w7right8": {
+  "hywp": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "lyra2": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "liveworld": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "lingbot": {
+   "text": "Cat does not jump.",
+   "ok": false
+  },
+  "hydra": {
+   "text": "Cat deforms significantly.",
+   "ok": false
+  },
+  "dynatoken": {
+   "text": "Cat jumps correctly and camera moves correctly.",
+   "ok": true
+  }
+ },
+ "vbench_baselines/fox/down7left8": {
+  "hywp": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "hydra": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "lyra2": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "lingbot": {
+   "text": "Fox walks out of the frame.",
+   "ok": false
+  },
+  "liveworld": {
+   "text": "Fox does not run to the behind of the shoe.",
+   "ok": false
+  },
+  "dynatoken": {
+   "text": "Fox runs to the behind of the shoe and camera moves correctly.",
+   "ok": true
+  }
+ },
+ "vbench_baselines/fox/s7w8": {
+  "hywp": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "lyra2": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "hydra": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "lingbot": {
+   "text": "Fox does not run to the behind of the shoe.",
+   "ok": false
+  },
+  "liveworld": {
+   "text": "Fox does not run to the behind of the shoe.",
+   "ok": false
+  },
+  "dynatoken": {
+   "text": "Fox runs to the behind of the shoe and camera moves correctly.",
+   "ok": true
+  }
+ },
+ "vbench_baselines/fox/w7right8": {
+  "hywp": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "lyra2": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "hydra": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "lingbot": {
+   "text": "Fox does not run to the behind of the shoe.",
+   "ok": false
+  },
+  "liveworld": {
+   "text": "Fox does not run to the behind of the shoe.",
+   "ok": false
+  },
+  "dynatoken": {
+   "text": "Fox runs to the behind of the shoe and camera moves correctly.",
+   "ok": true
+  }
+ },
+ "vbench_baselines/person_sitting_in_chair/right7up8": {
+  "hywp": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "lyra2": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "lingbot": {
+   "text": "The person stands up but does not stretch.",
+   "ok": false
+  },
+  "liveworld": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "hydra": {
+   "text": "Camera movement does not follow instruction and a game character suddenly emerges.",
+   "ok": false
+  },
+  "dynatoken": {
+   "text": "Person starts stretching and camera moves correctly.",
+   "ok": true
+  }
+ },
+ "vbench_baselines/person_sitting_in_chair/s7w8": {
+  "hywp": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "lyra2": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "lingbot": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "liveworld": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "hydra": {
+   "text": "A new person emerges.",
+   "ok": false
+  },
+  "dynatoken": {
+   "text": "Person starts stretching and camera moves correctly.",
+   "ok": true
+  }
+ },
+ "vbench_baselines/person_sitting_in_chair/w7left8": {
+  "hywp": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "lyra2": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "liveworld": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "lingbot": {
+   "text": "Person does not stretch.",
+   "ok": false
+  },
+  "hydra": {
+   "text": "Blurry video.",
+   "ok": false
+  },
+  "dynatoken": {
+   "text": "Person starts stretching and camera moves correctly.",
+   "ok": true
+  }
+ },
+ "vbench_baselines/personcouch/right7up8": {
+  "hywp": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "lyra2": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "lingbot": {
+   "text": "Camera moves forward instead of tilts up.",
+   "ok": false
+  },
+  "liveworld": {
+   "text": "Person sweeps and camera moves correctly but a new broom emerges.",
+   "ok": false
+  },
+  "hydra": {
+   "text": "Significant quality degradation.",
+   "ok": false
+  },
+  "dynatoken": {
+   "text": "Person sweeps and camera moves correctly.",
+   "ok": true
+  }
+ },
+ "vbench_baselines/personcouch/s7w8": {
+  "hywp": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "lyra2": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "lingbot": {
+   "text": "A new person emerges.",
+   "ok": false
+  },
+  "liveworld": {
+   "text": "Person sweeps and camera moves correctly but a new broom emerges.",
+   "ok": false
+  },
+  "hydra": {
+   "text": "Significant quality degradation.",
+   "ok": false
+  },
+  "dynatoken": {
+   "text": "Person sweeps and camera moves correctly.",
+   "ok": false
+  }
+ },
+ "vbench_baselines/personcouch/w7right8": {
+  "hywp": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "lyra2": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "lingbot": {
+   "text": "Person does not sweep.",
+   "ok": false
+  },
+  "liveworld": {
+   "text": "Person sweeps and camera moves correctly but a new broom emerges.",
+   "ok": false
+  },
+  "hydra": {
+   "text": "Significant quality degradation.",
+   "ok": false
+  },
+  "dynatoken": {
+   "text": "Person sweeps and camera moves correctly.",
+   "ok": false
+  }
+ },
+ "worldscore_baselines/bus_moves_forward_along_p_r_003/a_w": {
+  "baseline_hywp": {
+   "text": "Bus does not move.",
+   "ok": false
+  },
+  "baseline_lyra2": {
+   "text": "Bus does not move.",
+   "ok": false
+  },
+  "baseline_lingbot": {
+   "text": "Bus does not move.",
+   "ok": false
+  },
+  "baseline_liveworld": {
+   "text": "Bus does not move.",
+   "ok": false
+  },
+  "baseline_hydra": {
+   "text": "Bus does not move.",
+   "ok": false
+  },
+  "crossattn_optimal": {
+   "text": "Bus moves forward along the road and camera moves correctly.",
+   "ok": true
+  }
+ },
+ "worldscore_baselines/bus_moves_forward_along_p_r_003/d_w": {
+  "baseline_hywp": {
+   "text": "Bus does not move.",
+   "ok": false
+  },
+  "baseline_lyra2": {
+   "text": "Bus does not move.",
+   "ok": false
+  },
+  "baseline_lingbot": {
+   "text": "Bus does not move.",
+   "ok": false
+  },
+  "baseline_hydra": {
+   "text": "Bus does not move.",
+   "ok": false
+  },
+  "crossattn_optimal": {
+   "text": "Bus moves forward along the road and camera moves correctly.",
+   "ok": true
+  },
+  "baseline_liveworld": {
+   "text": "Bus does not move.",
+   "ok": false
+  }
+ },
+ "worldscore_baselines/bus_moves_forward_along_p_r_003/right_up": {
+  "baseline_hywp": {
+   "text": "Bus does not move.",
+   "ok": false
+  },
+  "baseline_lyra2": {
+   "text": "Bus does not move.",
+   "ok": false
+  },
+  "baseline_hydra": {
+   "text": "Bus does not move.",
+   "ok": false
+  },
+  "crossattn_optimal": {
+   "text": "Bus moves forward along the road and camera moves correctly.",
+   "ok": true
+  },
+  "baseline_lingbot": {
+   "text": "Bus does not move.",
+   "ok": false
+  },
+  "baseline_liveworld": {
+   "text": "A new bus emerges.",
+   "ok": false
+  }
+ },
+ "worldscore_baselines/rocket_ignites_and_ascends_p_r_027/d_w": {
+  "baseline_hywp": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_lyra2": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "crossattn_optimal": {
+   "text": "Rocket ignites and ascends and camera moves correctly.",
+   "ok": true
+  },
+  "baseline_liveworld": {
+   "text": "Rocket drifts with the camera.",
+   "ok": false
+  },
+  "baseline_lingbot": {
+   "text": "Camera does not move.",
+   "ok": false
+  },
+  "baseline_hydra": {
+   "text": "Quality degrades.",
+   "ok": false
+  }
+ },
+ "worldscore_baselines/rocket_ignites_and_ascends_p_r_027/left_w": {
+  "baseline_hywp": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_lyra2": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_lingbot": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_liveworld": {
+   "text": "Rocket drifts with the camera.",
+   "ok": false
+  },
+  "baseline_hydra": {
+   "text": "Quality degrades.",
+   "ok": false
+  },
+  "crossattn_optimal": {
+   "text": "Rocket ignites and ascends and camera moves correctly.",
+   "ok": true
+  }
+ },
+ "worldscore_baselines/rocket_ignites_and_ascends_p_r_027/right_up": {
+  "baseline_hywp": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "crossattn_optimal": {
+   "text": "Rocket ignites and ascends and camera moves correctly.",
+   "ok": true
+  },
+  "baseline_lingbot": {
+   "text": "A new rocket emerges.",
+   "ok": false
+  },
+  "baseline_liveworld": {
+   "text": "A new rocket emerges.",
+   "ok": false
+  },
+  "baseline_lyra2": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_hydra": {
+   "text": "Quality degrades.",
+   "ok": false
+  }
+ },
+ "worldscore_baselines/train_smoothly_travels_along_p_r_034/a_w": {
+  "baseline_hywp": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_lyra2": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_liveworld": {
+   "text": "Train travels along the tracks and camera moves correctly.",
+   "ok": true
+  },
+  "baseline_lingbot": {
+   "text": "Camera does not move left.",
+   "ok": false
+  },
+  "baseline_hydra": {
+   "text": "A cow emerges.",
+   "ok": false
+  },
+  "crossattn_optimal": {
+   "text": "Train travels along the tracks and camera moves correctly.",
+   "ok": true
+  }
+ },
+ "worldscore_baselines/train_smoothly_travels_along_p_r_034/d_w": {
+  "baseline_hywp": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_lyra2": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_lingbot": {
+   "text": "Camera does not move right or forward.",
+   "ok": false
+  },
+  "baseline_liveworld": {
+   "text": "Train becomes infinitely long.",
+   "ok": false
+  },
+  "baseline_hydra": {
+   "text": "A cow emerges.",
+   "ok": false
+  },
+  "crossattn_optimal": {
+   "text": "Train travels along the tracks and camera moves correctly.",
+   "ok": true
+  }
+ },
+ "worldscore_baselines/train_smoothly_travels_along_p_r_034/right_up": {
+  "baseline_lingbot": {
+   "text": "Train travels along the tracks and camera moves correctly.",
+   "ok": true
+  },
+  "baseline_hydra": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "crossattn_optimal": {
+   "text": "Train travels along the tracks and camera moves correctly.",
+   "ok": true
+  },
+  "baseline_hywp": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_lyra2": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_liveworld": {
+   "text": "A new train emerges.",
+   "ok": false
+  }
+ },
+ "worldscore_baselines/train_moves_steadily_forward_s_r_056/a_w": {
+  "baseline_hywp": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_lyra2": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_lingbot": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "crossattn_optimal": {
+   "text": "Train moves forward along the tracks and camera moves correctly.",
+   "ok": true
+  },
+  "baseline_liveworld": {
+   "text": "Train texture and motion drift.",
+   "ok": false
+  },
+  "baseline_hydra": {
+   "text": "Quality degrades.",
+   "ok": false
+  }
+ },
+ "worldscore_baselines/train_moves_steadily_forward_s_r_056/d_w": {
+  "baseline_hywp": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_lyra2": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_lingbot": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "crossattn_optimal": {
+   "text": "Train moves forward along the tracks and camera moves correctly.",
+   "ok": true
+  },
+  "baseline_liveworld": {
+   "text": "A new train emerges.",
+   "ok": false
+  },
+  "baseline_hydra": {
+   "text": "Quality degrades.",
+   "ok": false
+  }
+ },
+ "worldscore_baselines/train_moves_steadily_forward_s_r_056/down_right": {
+  "baseline_hywp": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "crossattn_optimal": {
+   "text": "Train moves forward along the tracks and camera moves correctly.",
+   "ok": true
+  },
+  "baseline_lyra2": {
+   "text": "The train is static, and the newly generated region inserts wooden blocks rather than extending the scene.",
+   "ok": false
+  },
+  "baseline_lingbot": {
+   "text": "Train moves forward along the tracks and camera moves correctly.",
+   "ok": true
+  },
+  "baseline_liveworld": {
+   "text": "Train texture drifts.",
+   "ok": false
+  },
+  "baseline_hydra": {
+   "text": "Quality degrades.",
+   "ok": false
+  }
+ },
+ "physicsiq/trimmed_liquid_on_duck_r_0087/a_d": {
+  "baseline_hywp_old": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_lyra2_old": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "crossattn": {
+   "text": "Liquid pours in around the duck and camera moves correctly.",
+   "ok": true
+  },
+  "baseline_lingbot": {
+   "text": "Camera does not move.",
+   "ok": false
+  }
+ },
+ "physicsiq/trimmed_liquid_on_duck_r_0087/d2": {
+  "baseline_lyra2_old": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "crossattn": {
+   "text": "Liquid pours in around the duck and camera moves correctly.",
+   "ok": true
+  },
+  "baseline_lingbot": {
+   "text": "Camera does not move.",
+   "ok": false
+  },
+  "baseline_hywp_old": {
+   "text": "Scene completely static.",
+   "ok": false
+  }
+ },
+ "physicsiq/trimmed_liquid_on_duck_r_0087/d_a": {
+  "baseline_hywp_old": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_lyra2_old": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "crossattn": {
+   "text": "Liquid pours in around the duck and camera moves correctly.",
+   "ok": true
+  },
+  "baseline_lingbot": {
+   "text": "Camera does not move.",
+   "ok": false
+  }
+ },
+ "physicsiq/trimmed_weight_on_pillow_c_0194/a_d": {
+  "baseline_lingbot": {
+   "text": "Camera does not move left.",
+   "ok": false
+  },
+  "baseline_hywp_old": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_lyra2_old": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "crossattn": {
+   "text": "Both motion and camera are correct.",
+   "ok": true
+  }
+ },
+ "physicsiq/trimmed_weight_on_pillow_c_0194/a_w": {
+  "baseline_lingbot": {
+   "text": "Camera does not move left.",
+   "ok": false
+  },
+  "baseline_hywp_old": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_lyra2_old": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "crossattn": {
+   "text": "Both motion and camera are correct.",
+   "ok": true
+  }
+ },
+ "physicsiq/trimmed_weight_on_pillow_c_0194/d_w": {
+  "baseline_lingbot": {
+   "text": "Motion is correct but camera is shaky.",
+   "ok": true
+  },
+  "baseline_hywp_old": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_lyra2_old": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "crossattn": {
+   "text": "Both motion and camera are correct.",
+   "ok": true
+  }
+ },
+ "physicsiq/trimmed_teapot_rotates_c_0176/d_w": {
+  "baseline_lingbot": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "crossattn": {
+   "text": "Teapot rotates and camera moves correctly.",
+   "ok": true
+  },
+  "baseline_hywp_old": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_lyra2_old": {
+   "text": "Scene completely static.",
+   "ok": false
+  }
+ },
+ "physicsiq/trimmed_teapot_rotates_c_0176/s2": {
+  "baseline_lingbot": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_hywp_old": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_lyra2_old": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "crossattn": {
+   "text": "Teapot rotates and camera moves correctly.",
+   "ok": true
+  }
+ },
+ "physicsiq/trimmed_teapot_rotates_c_0176/up_left": {
+  "baseline_lingbot": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_hywp_old": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_lyra2_old": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "crossattn": {
+   "text": "Teapot rotates and camera moves correctly.",
+   "ok": true
+  }
+ },
+ "vbench_baselines/cat_playing_with_toy/up7right8": {
+  "hywp": {
+   "text": "Cat does not jump.",
+   "ok": false
+  },
+  "lyra2": {
+   "text": "Cat does not jump.",
+   "ok": false
+  },
+  "lingbot": {
+   "text": "Shaky camera control.",
+   "ok": false
+  },
+  "liveworld": {
+   "text": "Cat deforms.",
+   "ok": false
+  },
+  "hydra": {
+   "text": "Significant quality degradation.",
+   "ok": false
+  },
+  "dynatoken": {
+   "text": "Cat jumps correctly and camera moves correctly.",
+   "ok": true
+  }
+ },
+ "worldscore_baselines/boat_gently_rocks_and_s_r_021/down_right": {
+  "crossattn_optimal": {
+   "text": "Boat moves forward through the water and camera moves correctly.",
+   "ok": true
+  },
+  "baseline_hywp": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_lyra2": {
+   "text": "Boat moves backward.",
+   "ok": false
+  },
+  "baseline_lingbot": {
+   "text": "Boat does not move forward.",
+   "ok": false
+  },
+  "baseline_liveworld": {
+   "text": "Boat moves backward.",
+   "ok": false
+  },
+  "baseline_hydra": {
+   "text": "Boat does not move and camera movement is wrong.",
+   "ok": false
+  }
+ },
+ "worldscore_baselines/boat_gently_rocks_and_s_r_021/left_w": {
+  "crossattn_optimal": {
+   "text": "Boat moves forward through the water and camera moves correctly.",
+   "ok": true
+  },
+  "baseline_hywp": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_lyra2": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_lingbot": {
+   "text": "Boat texture drift.",
+   "ok": false
+  },
+  "baseline_liveworld": {
+   "text": "Boat moves but water physics is implausible.",
+   "ok": false
+  },
+  "baseline_hydra": {
+   "text": "Boat does not move and camera does not pan left.",
+   "ok": false
+  }
+ },
+ "worldscore_baselines/boat_gently_rocks_and_s_r_021/right_up": {
+  "crossattn_optimal": {
+   "text": "Boat moves forward through the water and camera moves correctly.",
+   "ok": true
+  },
+  "baseline_hywp": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_lyra2": {
+   "text": "Scene completely static.",
+   "ok": false
+  },
+  "baseline_lingbot": {
+   "text": "Background drift.",
+   "ok": false
+  },
+  "baseline_liveworld": {
+   "text": "Boat does not move.",
+   "ok": false
+  },
+  "baseline_hydra": {
+   "text": "Boat does not move and camera does not pan left.",
+   "ok": false
+  }
+ },
+ "vbench_ablations/bird/down7left8": {
+  "lora": {
+   "text": "Hallucinates a grey artifact on the top left, and heavy artifacts around the wings.",
+   "ok": false
+  },
+  "dynatoken": {
+   "text": "The bird flies to the right correctly and camera moves correctly.",
+   "ok": true
+  },
+  "ttt": {
+   "text": "The bird morphs significantly and disappears.",
+   "ok": false
+  },
+  "unfreeze": {
+   "text": "Bird does not fly and suddenly disappears.",
+   "ok": false
+  }
+ },
+ "vbench_ablations/bird/s7w8": {
+  "lora": {
+   "text": "Heavy artifacts on the wing, and the bird morphs with the branch.",
+   "ok": false
+  },
+  "dynatoken": {
+   "text": "The bird correctly flies to the right and camera moves correctly.",
+   "ok": true
+  },
+  "ttt": {
+   "text": "The bird morphs heavily and flies out of frame, while the center of the frame keeps morphing and flickering.",
+   "ok": false
+  },
+  "unfreeze": {
+   "text": "The bird does not move; the wings just suddenly disappear.",
+   "ok": false
+  }
+ },
+ "vbench_ablations/bird/up7right8": {
+  "ttt": {
+   "text": "The bird splits into two and has heavy artifacts.",
+   "ok": false
+  },
+  "dynatoken": {
+   "text": "The bird correctly flies to the right of the apple and camera moves correctly.",
+   "ok": true
+  },
+  "unfreeze": {
+   "text": "The scene is static.",
+   "ok": false
+  },
+  "lora": {
+   "text": "The bird disappears and reappears with heavy artifacts.",
+   "ok": false
+  }
+ },
+ "vbench_ablations/kangaroo/down7left8": {
+  "ttt": {
+   "text": "The kangaroo morphs in place but does not jump.",
+   "ok": false
+  },
+  "dynatoken": {
+   "text": "The kangaroo correctly jumps to the right of the box and camera moves correctly.",
+   "ok": true
+  },
+  "unfreeze": {
+   "text": "The kangaroo does not jump.",
+   "ok": false
+  },
+  "lora": {
+   "text": "The camera does not really look down, and the kangaroo does not move.",
+   "ok": false
+  }
+ },
+ "vbench_ablations/kangaroo/s7w8": {
+  "lora": {
+   "text": "The camera keeps drifting left even though the command is only backward and forward, and the kangaroo does not move.",
+   "ok": false
+  },
+  "dynatoken": {
+   "text": "The kangaroo correctly jumps to the right and camera moves correctly.",
+   "ok": true
+  },
+  "ttt": {
+   "text": "The kangaroo moves and morphs rather than jumps, and the camera drifts right even though the command is only backward then forward.",
+   "ok": false
+  },
+  "unfreeze": {
+   "text": "The kangaroo jumps in place rather than to the right of the box, and the ground has artifacts.",
+   "ok": false
+  }
+ },
+ "vbench_ablations/kangaroo/up7right8": {
+  "dynatoken": {
+   "text": "The kangaroo jumps correctly to the right of the box and camera moves correctly.",
+   "ok": true
+  },
+  "unfreeze": {
+   "text": "The kangaroo remains static.",
+   "ok": false
+  },
+  "ttt": {
+   "text": "The kangaroo stretches and morphs rather than jumping, and the camera barely looks up.",
+   "ok": false
+  },
+  "lora": {
+   "text": "The kangaroo does not jump, and the camera does not follow the command at all, moving left the whole time even though the command is up and then right.",
+   "ok": false
+  }
+ },
+ "vbench_ablations/person_sitting_in_chair/right7up8": {
+  "ttt": {
+   "text": "The person does not get up; the upper body morphs, disappears and reappears.",
+   "ok": false
+  },
+  "dynatoken": {
+   "text": "The person correctly stands up and stretches, and camera moves correctly.",
+   "ok": true
+  },
+  "unfreeze": {
+   "text": "The person stretches while sitting but does not stand up.",
+   "ok": false
+  },
+  "lora": {
+   "text": "The person tries very hard to stand up but does not fully stand up, and does not stretch.",
+   "ok": false
+  }
+ },
+ "vbench_ablations/person_sitting_in_chair/s7w8": {
+  "dynatoken": {
+   "text": "The person successfully stands up and stretches, and camera moves correctly.",
+   "ok": true
+  },
+  "lora": {
+   "text": "The person only leans forward and does not stand up or stretch.",
+   "ok": false
+  },
+  "ttt": {
+   "text": "The person's upper body morphs, and the head disappears and reappears.",
+   "ok": false
+  },
+  "unfreeze": {
+   "text": "The person stretches while sitting but does not stand up.",
+   "ok": false
+  }
+ },
+ "vbench_ablations/person_sitting_in_chair/w7left8": {
+  "dynatoken": {
+   "text": "The person correctly stands up and stretches, and camera moves correctly.",
+   "ok": true
+  },
+  "unfreeze": {
+   "text": "The person stretches while sitting but does not stand up.",
+   "ok": false
+  },
+  "ttt": {
+   "text": "The person morphs and leans forward but does not get up or stretch.",
+   "ok": false
+  },
+  "lora": {
+   "text": "The person only leans forward and does not stand up or stretch.",
+   "ok": false
+  }
+ },
+ "vbench_ablations/personcooking/down7left8": {
+  "dynatoken": {
+   "text": "The person correctly stops cooking and starts organizing the pantry.",
+   "ok": true
+  },
+  "ttt": {
+   "text": "The person continues cooking.",
+   "ok": false
+  },
+  "unfreeze": {
+   "text": "The person correctly stops cooking and starts organizing the pantry.",
+   "ok": true
+  },
+  "lora": {
+   "text": "The camera command is not followed at all: the command is down and left, but the camera looks up. The person keeps cooking and does not organize the pantry.",
+   "ok": false
+  }
+ },
+ "vbench_ablations/personcooking/up7right8": {
+  "dynatoken": {
+   "text": "The person suddenly starts organizing the pantry as the text prompt says, and camera moves correctly.",
+   "ok": true
+  },
+  "lora": {
+   "text": "The person does not go to organize the pantry.",
+   "ok": false
+  },
+  "unfreeze": {
+   "text": "The person suddenly starts organizing the pantry as the text prompt says, and camera moves correctly.",
+   "ok": true
+  },
+  "ttt": {
+   "text": "The person does not organize the pantry but keeps cooking.",
+   "ok": false
+  }
+ },
+ "vbench_ablations/personcooking/w7right8": {
+  "dynatoken": {
+   "text": "The person correctly starts organizing the pantry, and camera moves correctly.",
+   "ok": true
+  },
+  "unfreeze": {
+   "text": "The person starts organizing the pantry, but the left arm has an artifact.",
+   "ok": false
+  },
+  "ttt": {
+   "text": "The person keeps cooking and does not organize the pantry.",
+   "ok": false
+  },
+  "lora": {
+   "text": "Camera control is completely lost and the camera goes up, and the person does not organize the pantry.",
+   "ok": false
+  }
+ },
+ "worldscore_ablations/rocket_ignites_and_ascends_p_r_027/d_w": {
+  "ttt": {
+   "text": "The rocket does not ascend.",
+   "ok": false
+  },
+  "crossattn": {
+   "text": "The rocket correctly ignites and ascends, and camera moves correctly.",
+   "ok": true
+  },
+  "lora": {
+   "text": "The full scene explodes into fire.",
+   "ok": false
+  },
+  "unfreeze": {
+   "text": "The camera does not move right.",
+   "ok": false
+  }
+ },
+ "worldscore_ablations/rocket_ignites_and_ascends_p_r_027/down_right": {
+  "crossattn": {
+   "text": "The rocket correctly ignites and ascends, and camera moves correctly.",
+   "ok": true
+  },
+  "unfreeze": {
+   "text": "The rocket does not ascend.",
+   "ok": false
+  },
+  "ttt": {
+   "text": "The rocket ascends slightly, then stays static.",
+   "ok": false
+  },
+  "lora": {
+   "text": "The full scene explodes into fire.",
+   "ok": false
+  }
+ },
+ "worldscore_ablations/rocket_ignites_and_ascends_p_r_027/down_w": {
+  "crossattn": {
+   "text": "The rocket correctly ignites and ascends, and camera moves correctly.",
+   "ok": true
+  },
+  "lora": {
+   "text": "The full scene explodes into fire.",
+   "ok": false
+  },
+  "ttt": {
+   "text": "The rocket ascends very slowly and shakily.",
+   "ok": false
+  },
+  "unfreeze": {
+   "text": "The rocket does not ascend.",
+   "ok": false
+  }
+ },
+ "worldscore_ablations/car_moves_smoothly_along_p_r_099/a_w": {
+  "unfreeze": {
+   "text": "The car stalls for the second half.",
+   "ok": false
+  },
+  "crossattn": {
+   "text": "The car moves correctly along the road, and camera moves correctly.",
+   "ok": true
+  },
+  "ttt": {
+   "text": "Artifacts appear on the road.",
+   "ok": false
+  },
+  "lora": {
+   "text": "The car remains static.",
+   "ok": false
+  }
+ },
+ "worldscore_ablations/horse_gently_grazes_the_p_a_014/a_w": {
+  "crossattn": {
+   "text": "The horse correctly moves its head while grazing, and camera moves correctly.",
+   "ok": true
+  },
+  "ttt": {
+   "text": "The horse's head never lifts.",
+   "ok": false
+  },
+  "lora": {
+   "text": "The camera does not move left.",
+   "ok": false
+  },
+  "unfreeze": {
+   "text": "The horse does not move its head side to side.",
+   "ok": false
+  }
+ },
+ "worldscore_ablations/horse_gently_grazes_the_p_a_014/d_w": {
+  "crossattn": {
+   "text": "The horse correctly moves its head while grazing, and camera moves correctly.",
+   "ok": true
+  },
+  "unfreeze": {
+   "text": "The horse does not move its head side to side.",
+   "ok": false
+  },
+  "ttt": {
+   "text": "The horse's head disappears and reappears, and the camera initially does not move right.",
+   "ok": false
+  },
+  "lora": {
+   "text": "The horse does not resume grazing and does not move its head side to side.",
+   "ok": false
+  }
+ },
+ "worldscore_ablations/horse_gently_grazes_the_p_a_014/left_w": {
+  "crossattn": {
+   "text": "The horse correctly moves its head while grazing, and camera moves correctly.",
+   "ok": true
+  },
+  "lora": {
+   "text": "The camera is static and does not follow the control.",
+   "ok": false
+  },
+  "ttt": {
+   "text": "The horse never lifts its head.",
+   "ok": false
+  },
+  "unfreeze": {
+   "text": "The horse does not lift its head, and the camera keeps moving left even when it should move forward.",
+   "ok": false
+  }
+ },
+ "worldscore_ablations/train_smoothly_travels_along_p_r_034/a_w": {
+  "crossattn": {
+   "text": "The train correctly travels along the tracks, and camera moves correctly.",
+   "ok": true
+  },
+  "unfreeze": {
+   "text": "The train remains static, and the camera moves right, contradicting the command to move left.",
+   "ok": false
+  },
+  "ttt": {
+   "text": "The camera initially moves right, contradicting the command to move left.",
+   "ok": false
+  },
+  "lora": {
+   "text": "The camera keeps drifting up, even though the command is left and forward.",
+   "ok": false
+  }
+ },
+ "worldscore_ablations/train_smoothly_travels_along_p_r_034/down_right": {
+  "crossattn": {
+   "text": "The train correctly travels along the tracks, and camera moves correctly.",
+   "ok": true
+  },
+  "lora": {
+   "text": "The camera does not tilt down.",
+   "ok": false
+  },
+  "ttt": {
+   "text": "The train becomes shorter and smaller.",
+   "ok": false
+  },
+  "unfreeze": {
+   "text": "The train remains static.",
+   "ok": false
+  }
+ },
+ "worldscore_ablations/train_smoothly_travels_along_p_r_034/down_w": {
+  "crossattn": {
+   "text": "The train correctly travels along the tracks, and camera moves correctly.",
+   "ok": true
+  },
+  "unfreeze": {
+   "text": "The train remains static.",
+   "ok": false
+  },
+  "ttt": {
+   "text": "The train becomes shorter and smaller.",
+   "ok": false
+  },
+  "lora": {
+   "text": "The camera moves up, contradicting the command to tilt down.",
+   "ok": false
+  }
+ },
+ "worldscore_ablations/bus_moves_forward_along_p_r_003/d_w": {
+  "crossattn": {
+   "text": "The bus correctly backs up, then moves forward, and camera moves correctly.",
+   "ok": true
+  },
+  "lora": {
+   "text": "The frame becomes white.",
+   "ok": false
+  },
+  "ttt": {
+   "text": "The bus barely moves.",
+   "ok": false
+  },
+  "unfreeze": {
+   "text": "The snow in front of the bus disappears.",
+   "ok": false
+  }
+ },
+ "worldscore_ablations/bus_moves_forward_along_p_r_003/left_w": {
+  "crossattn": {
+   "text": "The bus correctly backs up, then moves forward, and camera moves correctly.",
+   "ok": true
+  },
+  "unfreeze": {
+   "text": "The bus stays static.",
+   "ok": false
+  },
+  "ttt": {
+   "text": "The bus moves in the correct direction but morphs slightly unrealistically.",
+   "ok": false
+  },
+  "lora": {
+   "text": "The bus does not move, and the scene completely changes.",
+   "ok": false
+  }
+ },
+ "worldscore_ablations/bus_moves_forward_along_p_r_003/right_up": {
+  "crossattn": {
+   "text": "The bus moves correctly, and camera moves correctly.",
+   "ok": true
+  },
+  "ttt": {
+   "text": "The bus moves correctly, and camera moves correctly.",
+   "ok": true
+  },
+  "lora": {
+   "text": "The screen becomes white.",
+   "ok": false
+  },
+  "unfreeze": {
+   "text": "The snow in front of the bus disappears, and there are artifacts on the right side.",
+   "ok": false
+  }
+ }
+}
