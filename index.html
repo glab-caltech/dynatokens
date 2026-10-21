@@ -293,6 +293,14 @@
               </video>
             </div>
             <p style="font-size: 18px; color: black; margin-top: 1.5rem;">
+              We show a harder example with multiple moving objects below, where <b>DynaTokens</b> localize to 4 ducks moving in different directions.
+            </p>
+            <div style="text-align: center;">
+              <video autoplay muted loop playsinline width="60%" style="border-radius: 10px;">
+                <source src="static/videos/attention_map_ducks.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p style="font-size: 18px; color: black; margin-top: 1.5rem;">
               <b>DynaTokens</b>' design enables cross attention to act like a localized gate. The attention map follows
               the moving dog. This enables learning to localize to the patches containing the motion, without affecting
               all patches globally, thus maintaining camera control. Check out the paper for more qualitative and quantitative
